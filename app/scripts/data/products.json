@@ -1,0 +1,92 @@
+{
+	"products" : [
+		{
+			"name": "MARC by Marc Jacobs 'Elise' Colorblock Sweater Dress",
+			"img" : "http://images1.urlstatic.com/port51/products/0/8/1/small/983180.jpg",
+			"brand": "Marc Jacobs",
+			"merchant":"Nordstrom",
+			"url" : "/",
+			"listPrice" : "278.00",
+			"salePrice" : "164.02",
+			"editorsPick" : false,
+			"sale": true
+		},
+		{
+			"name": "Alice + Olivia Maxi Dress - Genie Sweetheart Cutout",
+			"img" : "http://images2.urlstatic.com/port51/products/4/4/2/small/1341244.jpg",
+			"brand": "Alice + Olivia",
+			"merchant":"Bloomingdales",
+			"url" : "/",
+			"listPrice" : "698.00",
+			"salePrice" : "488.60",
+			"editorsPick" : false,
+			"sale" : true
+		},
+		{
+			"name": "Eliza J Print Chiffon Halter Maxi Dress",
+			"img" : "http://images2.urlstatic.com/port51/products/4/5/8/small/1119854.jpg",
+			"brand": "Eliza J",
+			"merchant":"Nordstrom",
+			"url" : "/",
+			"listPrice" : "158.00",
+			"salePrice" : "0.00",
+			"editorsPick" : true,
+			"sale" : false
+		},
+		{
+			"name": "French Connection Dress, Short-Sleeve High-Neck Eyelet",
+			"img" : "http://images1.urlstatic.com/port51/products/0/4/4/small/1006440.jpg",
+			"brand": "French Connection",
+			"merchant":"Macy's",
+			"url" : "/",
+			"listPrice" : "198.00",
+			"salePrice" : "149.99",
+			"editorsPick" : true,
+			"sale" : true
+		},
+		{
+			"name": "Convertible Sundress - Regular",
+			"img" : "http://images1.urlstatic.com/port51/products/9/9/7/small/1262799.jpg",
+			"brand": "Garnet Hill",
+			"merchant":"Garnet Hill",
+			"url" : "/",
+			"listPrice" : "138.00",
+			"salePrice" : "99.00",
+			"editorsPick" : false,
+			"sale" : true
+		},
+		{
+			"name": "Medium Stanthorpe Shoulder Bag",
+			"img" : "http://images1.urlstatic.com/port51/products/0/0/7/small/1376700.jpg",
+			"brand": "Neiman Marcus",
+			"merchant":"Neiman Marcus",
+			"url" : "/",
+			"listPrice" : "398.00",
+			"salePrice" : "266.00",
+			"editorsPick" : false,
+			"sale" : true
+		},
+		{
+			"name": "Perry Ellis Cotton Stripe Vest",
+			"img" : "http://images2.urlstatic.com/port51/products/1/4/2/small/1396241.jpg",
+			"brand": "Perry Ellis",
+			"merchant":"Perry Ellis",
+			"url" : "/",
+			"listPrice" : "79.50",
+			"salePrice" : "0.00",
+			"editorsPick" : false,
+			"sale" : false
+		},
+		{
+			"name": "Robert Talbott Linen Sportcoat",
+			"img" : "http://images3.urlstatic.com/port51/products/8/1/8/small/1357818.jpg",
+			"brand": "Robert Talbott",
+			"merchant":"Perry Ellis",
+			"url" : "/",
+			"listPrice" : "495.00",
+			"salePrice" : "247.49",
+			"editorsPick" : false,
+			"sale" : true
+		}					
+	]
+}

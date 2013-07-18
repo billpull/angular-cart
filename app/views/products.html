@@ -1,0 +1,41 @@
+<section class="span8 well product-wrap">
+	<!-- Filters -->
+	<form class="form-search clearfix">
+	  <input type="text" class="input-large search-query pull-right" placeholder="Search..."
+		ng-model="search.$" />
+	</form>
+	<!-- /Filters -->
+
+	<!-- Product Listing -->
+	<ul class="thumbnails">
+	  <li class="span2 thumbnail product" ng-repeat="product in products | filter:search">
+
+	  		<span ng-show="product.sale" class="sale-icon-wrap">
+	  			<i class="sale-icon"></i>
+	  		</span>
+
+	  		<img ng-src="{{product.img}}" alt="{{product.name}}" class="product-thumb" />
+
+	  		<i ng-show="product.editorsPick" class="editors-pick-icon"></i>
+
+	  		<div class="caption">
+	  			<h5>{{product.name}}</h5>
+
+	  			<div class="clearfix">
+	  				<strong class="pull-left">{{product.merchant}}</strong>
+
+	  				<span class="pull-right product-price">
+	  					<span ng-class="{'product-on-sale': product.sale}">{{product.listPrice | currency:"$"}}</span>
+	  					<span ng-show="product.sale" class="product-sale-price">
+	  						<br>
+	  						{{product.salePrice | currency:"$"}}
+	  					</span>
+	  				</span>
+	  			</div>
+
+	  			<button class="btn btn-primary pull-right add-to-cart">Add to cart</button>
+	  		</div>
+	  </li>
+	</ul>
+	<!-- /Product Listing -->
+</section>

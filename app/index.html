@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title></title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="styles/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="styles/main.css"/>
+
+    </head>
+    <body ng-app="borderShopApp">
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-fixed-top" style="position: absolute;">
+          <div class="navbar-inner">
+            <div class="container" style="width: auto; padding: 0 20px;">
+              <a class="brand" href="#">Shop Free</a>
+            </div>
+          </div>
+        </div>
+        
+        <!--[if lt IE 9]>
+            <script src="scripts/vendor/es5-shim.min.js"></script>
+            <script src="scripts/vendor/json3.min.js"></script>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="container-fluid">
+
+            <!-- PRODUCT CONTROLLER -->
+            <section class="span8 well product-wrap" ng-controller="ProductCtrl">
+                <!-- Filters -->
+                <form class="form-search clearfix">
+                  <input type="text" class="input-large search-query pull-right" placeholder="Search..."
+                    ng-model="search.$" />
+                </form>
+                <!-- /Filters -->
+
+                <!-- Product Listing -->
+                <ul class="thumbnails">
+                  <li class="span2 thumbnail product" ng-repeat="product in products | filter:search">
+
+                        <span ng-show="product.sale" class="sale-icon-wrap">
+                            <i class="sale-icon"></i>
+                        </span>
+
+                        <img ng-src="{{product.img}}" alt="{{product.name}}" class="product-thumb" />
+
+                        <i ng-show="product.editorsPick" class="editors-pick-icon"></i>
+
+                        <div class="caption clearfix">
+                            <h5 class="product-title">{{product.name}}</h5>
+
+                            <div class="clearfix product-meta">
+                                <strong class="pull-left">{{product.merchant}}</strong>
+
+                                <span class="pull-right product-price">
+                                    <span ng-class="{'product-on-sale': product.sale}">{{product.listPrice | currency:"$"}}</span><br>
+                                    <span ng-show="product.sale" class="product-sale-price">
+                                        {{product.salePrice | currency:"$"}}
+                                    </span>
+                                </span>
+                            </div>
+
+                            <br>
+                            <button class="btn btn-primary pull-right" ng-click="addToCart(product)">Add to cart</button>
+                        </div>
+                  </li>
+                </ul>
+                <!-- /Product Listing -->
+            </section>
+            <!-- /PRODUCT CONTROLLER -->
+
+            <!-- CART CONTROLLER -->
+            <section class="span4" ng-controller="CartCtrl">
+                <ul>
+                    <li ng-repeat="item in items">
+                        <div class="media">
+                          <a class="pull-left" href="#">
+                            <img class="media-object cart-thumb" ng-src="{{item.img}}" alt="{{cart.item.name">
+                          </a>
+                          <div class="media-body">
+                            <h6 class="media-heading">
+                                {{item.name}} 
+                                <button class="close" ng-click="removeItem(item)">&times;</button>
+                            </h6>
+                            <div class="clearfix">
+                                <input type="text" class="input-mini pull-left" ng-model="item.quantity" />
+                                <strong class="pull-right">{{item.finalPrice | currency:"$"}}</strong>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="form-actions">
+                    <span>Total</span><strong>{{totalPrice | currency:"$"}}
+                </div>
+            </section>
+            <!-- /CART CONTROLLER -->
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="scripts/vendor/angular.js"></script>
+        <script src="scripts/vendor/bootstrap.min.js"></script>
+
+        <!-- build:js scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/product.js"></script>
+        <script src="scripts/controllers/cart.js"></script>
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

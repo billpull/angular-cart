@@ -1,0 +1,31 @@
+{
+	"cart": {
+		"totals": {
+			"qty": 0,
+			"price": 0,
+			"shipping": 0,
+			"tax": 0,
+			"subtotal": 0,
+			"total": 0
+		},
+		"items": [],
+		"shippingmethods" : {
+			"Ground Shipping" : {
+				"name" : "Ground",
+				"price" : 9.95
+			},
+			"3 Day Shipping" : {
+				"name": "3 Day Shipping",
+				"price" : 13.95
+			},
+			"2 Day Shipping" : {
+				"name": "2 Day Shipping",
+				"price": 15.95
+			},
+			"Overnight" : {
+				"name":"Overnight",
+				"price":29.95
+			}
+		}
+	}
+}
