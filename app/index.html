@@ -6,9 +6,12 @@
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title></title>
+        <title>Shop free - Angular Cart</title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
+
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+
         <link rel="stylesheet" href="styles/bootstrap.min.css" />
         <link rel="stylesheet" href="styles/bootstrap-responsive.min.css" />
         <link rel="stylesheet" href="styles/main.css"/>
@@ -22,9 +25,14 @@
 
         <div class="navbar navbar-fixed-top" style="position: absolute;">
           <div class="navbar-inner">
-            <div class="container" style="width: auto; padding: 0 20px;">
-              <a class="brand" href="#">Shop Free</a>
-            </div>
+            <a class="brand" href="#">Shop Free</a>
+            <ul class="nav pull-right">
+                <li id="cart" class="cart-btn">
+                    <a href="#" class="btn btn-warning">
+                        Cart
+                    </a>
+                </li>
+            </ul>
           </div>
         </div>
         
@@ -81,8 +89,8 @@
             <!-- /PRODUCT CONTROLLER -->
 
             <!-- CART CONTROLLER -->
-            <section class="span4" ng-controller="CartCtrl">
-                <ul>
+            <section class="span4 cart-wrap" ng-controller="CartCtrl">
+                <ul class="unstyled">
                     <li ng-repeat="item in items">
                         <div class="media">
                           <a class="pull-left" href="#">
@@ -100,9 +108,40 @@
                           </div>
                         </div>
                     </li>
+                    <li class="clearfix">
+                        <button class="btn btn-inverse pull-right" ng-click="updateCart()">Update Cart</button>
+                    </li>
                 </ul>
                 <div class="form-actions">
-                    <span>Total</span><strong>{{totalPrice | currency:"$"}}
+                    <form class="form">
+                        <label class="radio clearfix" ng-repeat="shipping in shippingMethods">
+                          <span class="pull-left">
+                              <input type="radio" name="shipping" value="{{ $index }}" ng-model="shippingMethod.index">
+                              {{shipping.name}}
+                          </span>
+                          <span class="pull-right">{{shipping.price | currency:"$"}}</span>
+                        </label>
+                    </form>
+                    <hr>
+                    <div class="clearfix">
+                        <span class="pull-left">Original Price</span>
+                        <span class="pull-right">{{totalListPrice() | currency:"$"}}</span>
+                    </div>
+                    <div class="clearfix">
+                        <span class="pull-left">Savings</span>
+                        <span class="pull-right">-{{totalSavings() | currency:"$"}}</span>
+                    </div>
+                    <div class="clearfix">
+                        <span class="pull-left">Shipping</span>
+                        <span class="pull-right">+{{shippingCost | currency:"$"}}</span>
+                    </div>
+                    <hr>
+                    <div class="clearfix">
+                        <strong class="pull-left">Total Price</strong>
+                        <strong class="pull-right">{{totalPrice() | currency:"$"}}</strong>
+                    </div>
+
+                    <button class="btn btn-success btn-large btn-block" ng-click="checkoutCart()">Checkout</button>
                 </div>
             </section>
             <!-- /CART CONTROLLER -->
@@ -118,13 +157,5 @@
         <script src="scripts/controllers/product.js"></script>
         <script src="scripts/controllers/cart.js"></script>
         <!-- endbuild -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>

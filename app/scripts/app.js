@@ -3,6 +3,11 @@
 var borderShopApp = angular.module('borderShopApp', []);
 
 borderShopApp.service('cartItemsService', function () {
+  /**
+   *  Cart Item Service for communicating between product 
+   *  listing controller and cart controller.
+   *
+   */
   var cartItems= [];
     return{
         getCartItems: function(){
@@ -12,4 +17,10 @@ borderShopApp.service('cartItemsService', function () {
             cartItems=value;
         }
     };
+});
+
+$(function () {
+	$('#cart').on('click', function(e) {
+		$('.cart-wrap').slideToggle();
+	});
 });

@@ -65,14 +65,37 @@ body {
 }
 
 /* ===== Checkout Cart ===== */
+.cart-wrap {
+	background-color: #fff;
+	border: 1px solid #eee;
+	padding: 5px;
+}
+
 .cart-thumb {
 	height: 64px;
 	width: 64px;
 }
 
+.cart-btn {
+	display:none;
+	margin-right: 20px;
+}
+
 @media (max-width: 767px) { 
 	.product-wrap {
 		width: 100%;
+	}
+
+	.cart-wrap {
+		display: none;
+		top: 60px;
+		position: absolute;
+		width: 70%;
+		right: 0;
+	}
+
+	.cart-btn {
+		display: block;
 	}
 }
 
@@ -88,5 +111,17 @@ body {
 
 	.product-thumb {
 		height: auto;
+	}
+
+	.cart-wrap {
+		display: none;
+		top: 60px;
+		position: absolute;
+		width: 90%;
+		right: 0;
+	}
+
+	.cart-btn {
+		display: block;
 	}
 }
