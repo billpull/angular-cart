@@ -10,14 +10,12 @@
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
 
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-
         <link rel="stylesheet" href="styles/bootstrap.min.css" />
         <link rel="stylesheet" href="styles/bootstrap-responsive.min.css" />
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
-    <body ng-app="borderShopApp">
+    <body ng-app="angularShopApp">
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -28,9 +26,9 @@
             <a class="brand" href="#">Shop Free</a>
             <ul class="nav pull-right">
                 <li id="cart" class="cart-btn">
-                    <a href="#" class="btn btn-warning">
+                    <button href="#" class="btn btn-warning">
                         Cart
-                    </a>
+                    </button>
                 </li>
             </ul>
           </div>
@@ -45,7 +43,7 @@
         <div class="container-fluid">
 
             <!-- PRODUCT CONTROLLER -->
-            <section class="span8 well product-wrap" ng-controller="ProductCtrl">
+            <section class="span9 well product-wrap" ng-controller="ProductCtrl">
                 <!-- Filters -->
                 <form class="form-search clearfix">
                   <input type="text" class="input-large search-query pull-right" placeholder="Search..."
@@ -147,8 +145,7 @@
             <!-- /CART CONTROLLER -->
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="scripts/vendor/jquery.min.js"></script>
         <script src="scripts/vendor/angular.js"></script>
         <script src="scripts/vendor/bootstrap.min.js"></script>
 

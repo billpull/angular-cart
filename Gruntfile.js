@@ -41,7 +41,7 @@ module.exports = function( grunt ) {
 
     // generate application cache manifest
     manifest:{
-      dest: ''
+      dest: 'cache'
     },
 
     // default watch configuration

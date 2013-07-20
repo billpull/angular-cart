@@ -69,6 +69,8 @@ body {
 	background-color: #fff;
 	border: 1px solid #eee;
 	padding: 5px;
+	position: fixed;
+	right:20px;
 }
 
 .cart-thumb {

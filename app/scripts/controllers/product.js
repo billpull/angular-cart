@@ -1,6 +1,6 @@
 'use strict';
 
-borderShopApp.controller('ProductCtrl', function($scope, $http, cartItemsService) {
+angularShopApp.controller('ProductCtrl', function($scope, $http, cartItemsService) {
 	/**
 	 * @controller
 	 * Product listing controller.

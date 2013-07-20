@@ -1,8 +1,8 @@
 'use strict';
 
-var borderShopApp = angular.module('borderShopApp', []);
+var angularShopApp = angular.module('angularShopApp', []);
 
-borderShopApp.service('cartItemsService', function () {
+angularShopApp.service('cartItemsService', function () {
   /**
    *  Cart Item Service for communicating between product 
    *  listing controller and cart controller.
